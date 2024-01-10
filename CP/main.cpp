@@ -3,36 +3,18 @@ using namespace std;
 
 int main() {
     // your code goes here
-    int n,m;
-    cin >> n;
-    cin >> m;
-    int flag = 0;
-    for(int i=1; i<=n ; i++) {
-        if(i%2!=0) { // odd line
-            for(int i=1; i<=m ; i++) {
-                cout << "#";
-            }
-            cout << endl;
-        }
-        else {
-            if(flag==0) { // end #
-                flag=1;
-                for(int i=1; i<m ; i++) {
-                    cout << ".";
-                }
-                cout << "#" << endl;
-            }
-            else if (flag==1) { // # start
-                flag=0;
-                cout << "#";
-                for(int i=1; i<m ; i++) {
-                    cout << ".";
-                }
-                cout << endl;
-                
-            }
-            
+    int n,k;
+    int time=0;
+    int tot = 239;
+    int probs = 0;
+    cin >> n >> k;
+    for(int i=1; i<n+1;i++){
+        time += 5*i;
+        int timeleft = tot - time;
+        cout << timeleft << endl;
+        if ( timeleft >= k) {
+            probs = i;
         }
     }
+    cout << probs << endl;
 }
-    
